@@ -31,3 +31,4 @@ This project aims to predict traffic conditions using historical traffic and wea
    ```bash
    git clone https://github.com/22A31A43G3/Traffic-Prediction.git
    cd Traffic-Prediction
+   open traffic_app.py using steamlit 
