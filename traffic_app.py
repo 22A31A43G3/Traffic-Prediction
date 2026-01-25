@@ -107,7 +107,10 @@ def visuals(df_filtered):
         sns.countplot(data=df_filtered,x="traffic_level", ax=ax,hue="traffic_level",palette=palette)
         st.pyplot(fig)
 #-------------------------------------------------visuals---------------------------------------------------------
-st.html("<h1 align='center'>Overall Visuals</h1>")
+st.markdown(
+    "<h1 style='text-align:center;'>Overall Visuals</h1>",
+    unsafe_allow_html=True
+)
 st.subheader("Traffic Level On Each Day")
 fig,ax=plt.subplots()
 order = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
@@ -131,7 +134,7 @@ for h in hour:
         pred=(traf_model.predict([[days[day],h,locations[area][0],locations[area][1]]]))
         preds.append(int(pred))
 st.markdown("""---""")
-st.html("<h1 align='center'>Prediction Values</h1>")
+st.markdown("<h1 align='center'>Prediction Values</h1>", unsafe_allow_html=True)
 pred_container=st.container(border=True)
 with pred_container:
     i=0
@@ -152,7 +155,7 @@ with pred_container:
 #-------------------------------------------------/predictions---------------------------------------------------------
 #-------------------------------------------------visuals---------------------------------------------------------
 st.markdown("""<br>""",unsafe_allow_html=True)
-st.html("<h1 align='center'>Prediction Visuals</h1>")
+st.markdownl("<h1 align='center'>Prediction Visuals</h1>", unsafe_allow_html=True)
 vis_container=st.container(border=True)
 with vis_container:
     visuals(df[(df["area"]==area)&(df["hour"].isin(hour))&(df["day"]==days[day])])
