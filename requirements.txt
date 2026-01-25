@@ -4,3 +4,4 @@ numpy
 scikit-learn
 matplotlib
 rich==13.7.1
+seaborn
