@@ -68,7 +68,10 @@ st.sidebar.markdown(f"""
 """, unsafe_allow_html=True)
 #-------------------------------------------------/models-----------------------------------------------------------
 #-------------------------------------------------visuals---------------------------------------------------------
-st.html("<h1 align='center' class='title'>Traffic Predictor</h1>")
+st.markdown(
+    "<h1 style='text-align:center;'>Traffic Predictor</h1>",
+    unsafe_allow_html=True
+)
 st.markdown("""---""")
 filtered_df=df[(df["area"]==area)& (df["hour"].isin(hour))&(df["day"]==days[day])]
 def visuals(df_filtered):
