@@ -155,7 +155,7 @@ with pred_container:
 #-------------------------------------------------/predictions---------------------------------------------------------
 #-------------------------------------------------visuals---------------------------------------------------------
 st.markdown("""<br>""",unsafe_allow_html=True)
-st.markdownl("<h1 align='center'>Prediction Visuals</h1>", unsafe_allow_html=True)
+st.markdown("<h1 align='center'>Prediction Visuals</h1>", unsafe_allow_html=True)
 vis_container=st.container(border=True)
 with vis_container:
     visuals(df[(df["area"]==area)&(df["hour"].isin(hour))&(df["day"]==days[day])])
